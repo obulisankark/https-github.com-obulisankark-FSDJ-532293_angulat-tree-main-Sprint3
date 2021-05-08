@@ -1,0 +1,32 @@
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script>
+    $( document ).ready(function() {
+        console.log( "document loaded, tested for Document Ready Event" );
+		$("#hide").click(function(){
+		$("p").hide("slow", function(){
+		    alert("The hide effect is completed.");
+			});
+		});
+		$("#show").click(function(){
+		$("p").show();
+		});
+		$("#anmt").click(function(){
+		    $("div").animate({left: '250px'});
+		});
+	});
+ 
+    $( window ).on( "load", function() {
+        console.log( "window loaded" );
+    });
+    </script>
+</head>
+<body>
+    <p>Please click on the "Hide" button, to disappear.</p>
+	<button id="hide">Hide</button>
+	<button id="show">Show</button>
+	<button id="anmt">Start Animation</button>
+	<div style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
+</body>
+</html>
